@@ -1,0 +1,40 @@
+package:
+  name: bob.core
+  version: "2.1.0"
+
+source:
+  fn: bob.core-2.1.0.zip
+  url: https://pypi.python.org/packages/source/b/bob.core/bob.core-2.1.0.zip
+  md5: 03cb505d69b12a01e674b7469ea3b37e
+
+build:
+  preserve_egg_dir: True
+
+requirements:
+  build:
+    - nomkl
+    - bob.extension
+    - bob.blitz
+
+  run:
+    - nomkl
+    - bob.extension
+    - bob.blitz
+
+test:
+  requires:
+    - nomkl
+    - nose
+
+  imports:
+    - bob
+    - bob.core
+    - bob.core.random
+
+  commands:
+    - nosetests -sv bob.core
+
+about:
+  home: http://github.com/bioidiap/bob.core
+  license: BSD License
+  summary: 'Logging and RNG for Bob'

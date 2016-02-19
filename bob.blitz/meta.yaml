@@ -1,0 +1,39 @@
+package:
+  name: bob.blitz
+  version: "2.0.8"
+
+source:
+  fn: bob.blitz-2.0.8.zip
+  url: https://pypi.python.org/packages/source/b/bob.blitz/bob.blitz-2.0.8.zip
+  md5: 1d5db49ce0a5f64b8bd729e0455f52ab
+
+build:
+  preserve_egg_dir: True
+
+requirements:
+  build:
+    - bob.extension
+    - nomkl
+    - numpy
+
+  run:
+    - bob.extension
+    - nomkl
+    - numpy
+
+test:
+  requires:
+    - nomkl
+    - nose
+
+  imports:
+    - bob
+    - bob.blitz
+
+  commands:
+    - nosetests -sv bob.blitz
+
+about:
+  home: http://github.com/bioidiap/bob.blitz
+  license: BSD License
+  summary: 'Bindings for Blitz++ (a C++ array template library)'

@@ -1,0 +1,16 @@
+package:
+  name: blitz++
+  version: 0.10
+
+source:
+  fn: blitz-0.10.tar.gz
+  url: http://downloads.sourceforge.net/project/blitz/blitz/Blitz%2B%2B%200.10/blitz-0.10.tar.gz
+  md5: 66268b92bda923735f2e3afc87dcb58a
+
+build:
+  number: 0
+
+about:
+  home: https://sourceforge.net/projects/blitz
+  license: Artistic License 2.0, BSD, LGPLv3
+  summary: Blitz++ is a C++ class library for scientific computing which provides performance on par with Fortran 77/90
