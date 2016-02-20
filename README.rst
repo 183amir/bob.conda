@@ -4,7 +4,10 @@
 
 1. Install miniconda (http://conda.pydata.org/miniconda.html)
 
-
 2. You can check each package builds individually with::
 
-   $ conda build <package>
+     $ conda build <package>
+
+   The script ``build.sh`` will build the packages in the right order::
+
+     $ ./build.sh
