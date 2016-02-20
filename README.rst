@@ -4,7 +4,11 @@
 
 1. Install miniconda (http://conda.pydata.org/miniconda.html)
 
-2. You can check each package builds individually with::
+2. Install conda-build::
+
+     $ conda install conda-build
+
+3. You can check each package builds individually with::
 
      $ conda build <package>
 
