@@ -8,7 +8,6 @@ source:
   md5: a2ccb5f5a5f0abee02488565e636441d
 
 build:
-  noarch_python: True
   preserve_egg_dir: True
   entry_points:
     - bob_new_version.py = bob.extension.scripts:new_version

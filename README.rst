@@ -8,7 +8,12 @@
 
      $ conda install conda-build
 
-3. You can check each package builds individually with::
+3. Make sure all recipes are available on your checkout::
+
+     $ git submodule init
+     $ git submodule update
+
+4. You can check each package builds individually with::
 
      $ conda build <package>
 

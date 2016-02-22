@@ -12,6 +12,7 @@ build:
 
 requirements:
   build:
+    - gcc
     - nomkl
     - numpy
     - cmake
@@ -19,6 +20,7 @@ requirements:
     - bob.blitz
 
   run:
+    - gcc
     - nomkl
     - numpy
     - bob.blitz
