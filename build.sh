@@ -4,9 +4,20 @@
 # You don't need to pre-install anything on your environment
 CONDA=conda
 
-${CONDA} build blitz++
-${CONDA} build pkg-config
-${CONDA} build bob.extension
-${CONDA} build bob.blitz
-${CONDA} build bob.core
-${CONDA} build bob.math
+# install from other channels
+${CONDA} install anaconda-client anaconda-build
+${CONDA} config --add channels jakirkham
+# ${CONDA} install -c http://conda.anaconda.org/jakirkham pkg-config 
+
+for package in blitz++
+do
+	${CONDA} build $package
+done
+
+for package in bob.extension bob.blitz bob.core bob.math
+do
+	for pythonv in 2.7 3.4 3.5
+	do
+		${CONDA} build --python=$pythonv $package
+	done
+done

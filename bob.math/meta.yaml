@@ -12,14 +12,16 @@ build:
 
 requirements:
   build:
+    - python
+    - setuptools
     - bob.core
-    - blitz++
     - boost
     - cmake
 
   run:
+    - python
+    - setuptools
     - bob.core
-    - blitz++
     - boost
 
 test:

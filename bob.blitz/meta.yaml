@@ -12,6 +12,8 @@ build:
 
 requirements:
   build:
+    - python
+    - setuptools
     - bob.extension
     - nomkl
     - numpy
@@ -21,6 +23,8 @@ requirements:
     - cmake
 
   run:
+    - python
+    - setuptools
     - bob.extension
     - nomkl
     - numpy
