@@ -12,16 +12,18 @@ build:
 
 requirements:
   build:
-    - nomkl
     - bob.core
+    - blitz++
+    - boost
+    - cmake
 
   run:
-    - nomkl
     - bob.core
+    - blitz++
+    - boost
 
 test:
   requires:
-    - nomkl
     - nose
 
   imports:

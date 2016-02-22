@@ -13,17 +13,20 @@ build:
 requirements:
   build:
     - nomkl
-    - bob.extension
+    - numpy
+    - cmake
+    - pkg-config
     - bob.blitz
 
   run:
     - nomkl
-    - bob.extension
+    - numpy
     - bob.blitz
 
 test:
   requires:
     - nomkl
+    - numpy
     - nose
 
   imports:

@@ -28,6 +28,7 @@ test:
     - nose
     - boost
     - cmake
+    - pkg-config
     - blitz++
     - nomkl
     - numpy
@@ -40,7 +41,7 @@ test:
   commands:
     - bob_new_version.py --help
     - bob_dependecy_graph.py --help
-    - nosetests -sv bob.extension
+    - nosetests -sv bob.extension --exclude=test_cflags_other --exclude=test_extensions
 
 about:
   home: http://github.com/bioidiap/bob.extension

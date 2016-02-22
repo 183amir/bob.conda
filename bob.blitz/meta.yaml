@@ -15,11 +15,17 @@ requirements:
     - bob.extension
     - nomkl
     - numpy
+    - pkg-config
+    - blitz++
+    - boost
+    - cmake
 
   run:
     - bob.extension
     - nomkl
     - numpy
+    - blitz++
+    - boost
 
 test:
   requires:

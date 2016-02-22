@@ -5,6 +5,7 @@
 CONDA=conda
 
 ${CONDA} build blitz++
+${CONDA} build pkg-config
 ${CONDA} build bob.extension
 ${CONDA} build bob.blitz
 ${CONDA} build bob.core
