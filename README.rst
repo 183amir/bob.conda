@@ -8,7 +8,12 @@
 
      $ conda install conda-build
 
-3. Make sure all recipes are available on your checkout::
+3. Some dependency conda packages which are not available in default conda channels can be installed in two ways:
+
+3.1 [recommended] search for the package on http://anaconda.org and if it is available add that channel to your conda installation. For exmaple:
+	 $ conda config --add channels jakirkham
+
+3.2 Install them from their recipes. Make sure all recipes are available on your checkout::
 
      $ git submodule init
      $ git submodule update

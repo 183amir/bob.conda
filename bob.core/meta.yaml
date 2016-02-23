@@ -12,23 +12,23 @@ build:
 
 requirements:
   build:
+    - python
+    - setuptools
     - gcc
     - nomkl
-    - numpy
     - cmake
     - pkg-config
     - bob.blitz
 
   run:
+    - python
+    - setuptools
     - gcc
     - nomkl
-    - numpy
     - bob.blitz
 
 test:
   requires:
-    - nomkl
-    - numpy
     - nose
 
   imports:

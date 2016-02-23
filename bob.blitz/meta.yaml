@@ -12,19 +12,24 @@ build:
 
 requirements:
   build:
+    - python
+    - setuptools
     - bob.extension
     - nomkl
     - numpy
     - pkg-config
-    - blitz++
+    - libblitz
     - boost
     - cmake
+    - gcc
 
   run:
+    - python
+    - setuptools
     - bob.extension
     - nomkl
     - numpy
-    - blitz++
+    - libblitz
     - boost
 
 test:

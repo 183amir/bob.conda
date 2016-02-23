@@ -1,5 +1,5 @@
 package:
-  name: blitz++
+  name: libblitz
   version: 0.10
 
 source:
@@ -9,6 +9,13 @@ source:
 
 build:
   number: 0
+
+requirements:
+  build:
+    - autoconf
+    - automake
+    - libtool
+    - gcc
 
 about:
   home: https://sourceforge.net/projects/blitz

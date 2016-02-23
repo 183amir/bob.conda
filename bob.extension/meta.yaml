@@ -5,7 +5,7 @@ package:
 source:
   fn: bob.extension-2.0.11.zip
   url: https://pypi.python.org/packages/source/b/bob.extension/bob.extension-2.0.11.zip
-  md5: a2ccb5f5a5f0abee02488565e636441d
+  #md5: a2ccb5f5a5f0abee02488565e636441d
 
 build:
   preserve_egg_dir: True
@@ -28,9 +28,10 @@ test:
     - boost
     - cmake
     - pkg-config
-    - blitz++
+    - libblitz
     - nomkl
     - numpy
+    - gcc
 
   imports:
     - bob
@@ -40,7 +41,7 @@ test:
   commands:
     - bob_new_version.py --help
     - bob_dependecy_graph.py --help
-    - nosetests -sv bob.extension --exclude=test_cflags_other --exclude=test_extensions
+    - nosetests -sv bob.extension --exclude=test_cflags_other --exclude=test_extensions --exclude=test_utils
 
 about:
   home: http://github.com/bioidiap/bob.extension
