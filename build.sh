@@ -6,7 +6,7 @@ CONDA=conda
 
 # install from other channels
 ${CONDA} install anaconda-client anaconda-build
-${CONDA} config --add channels jakirkham alexbw asmeurer aseyboldt
+${CONDA} config --add channels jakirkham alexbw asmeurer aseyboldt amir183
 # ${CONDA} install -c http://conda.anaconda.org/jakirkham pkg-config 
 
 for package in libblitz
