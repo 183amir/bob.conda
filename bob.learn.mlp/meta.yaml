@@ -1,0 +1,42 @@
+about:
+  home: http://github.com/bioidiap/bob.learn.mlp
+  license: BSD License
+  summary: Bob's Multi-layer Perceptron and Trainers
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.learn.mlp
+  version: 2.0.6
+requirements:
+  build:
+  - python
+  - setuptools
+  - bob.extension >2.0.4
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - bob.math
+  - bob.learn.activation
+  - cmake
+  run:
+  - python
+  - setuptools
+  - bob.extension >2.0.4
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - bob.math
+  - bob.learn.activation
+source:
+  fn: bob.learn.mlp-2.0.6.zip
+  md5: 3838ae149418236166871777260a42e4
+  url: https://pypi.python.org/packages/source/b/bob.learn.mlp/bob.learn.mlp-2.0.6.zip
+test:
+  commands:
+  - nosetests -sv bob.learn.mlp
+  imports:
+  - bob
+  - bob.learn
+  - bob.learn.mlp
+  requires:
+  - nose

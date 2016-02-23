@@ -1,0 +1,48 @@
+about:
+  home: http://github.com/bioidiap/bob.measure
+  license: BSD License
+  summary: Bob's evalution metrics
+build:
+  entry_points:
+  - bob_compute_perf.py = bob.measure.script.compute_perf:main
+  - bob_eval_threshold.py = bob.measure.script.eval_threshold:main
+  - bob_apply_threshold.py = bob.measure.script.apply_threshold:main
+  - bob_plot_cmc.py = bob.measure.script.plot_cmc:main
+package:
+  name: bob.measure
+  version: 2.1.0
+requirements:
+  build:
+  - python
+  - setuptools
+  - bob.extension
+  - bob.blitz
+  - bob.core >2.0.4
+  - bob.math
+  - bob.io.base
+  - matplotlib
+  run:
+  - python
+  - bob.extension
+  - bob.blitz
+  - bob.core >2.0.4
+  - bob.math
+  - bob.io.base
+  - matplotlib
+source:
+  fn: bob.measure-2.1.0.zip
+  md5: d65e40fb5442c740a7f6b926a75b5944
+  url: https://pypi.python.org/packages/source/b/bob.measure/bob.measure-2.1.0.zip
+test:
+  commands:
+  - bob_compute_perf.py --help
+  - bob_eval_threshold.py --help
+  - bob_apply_threshold.py --help
+  - bob_plot_cmc.py --help
+  - nosetests -sv bob.measure
+  imports:
+  - bob
+  - bob.measure
+  - bob.measure.script
+  requires:
+  - nose

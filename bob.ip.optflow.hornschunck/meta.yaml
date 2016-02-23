@@ -1,0 +1,45 @@
+about:
+  home: https://github.com/bioidiap/bob.ip.optflow.hornschunck
+  license: GNU General Public License v3 (GPLv3)
+  summary: Python bindings to the optical flow framework of Horn & Schunck
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.ip.optflow.hornschunck
+  version: 2.0.6
+requirements:
+  build:
+  - python
+  - setuptools
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.sp
+  - bob.io.base
+  - bob.ip.color
+  - scipy
+  run:
+  - python
+  - setuptools
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.sp
+  - bob.io.base
+  - bob.ip.color
+  - scipy
+source:
+  fn: bob.ip.optflow.hornschunck-2.0.6.zip
+  md5: 6c40bb94784249b70a47c2ff57cf809a
+  url: https://pypi.python.org/packages/source/b/bob.ip.optflow.hornschunck/bob.ip.optflow.hornschunck-2.0.6.zip
+test:
+  commands:
+  - nosetests -sv bob.ip.optflow.hornschunck
+  imports:
+  - bob
+  - bob.ip
+  - bob.ip.optflow
+  - bob.ip.optflow.hornschunck
+  - bob.ip.optflow.hornschunck.example
+  requires:
+  - nose

@@ -1,0 +1,33 @@
+about:
+  home: https://pypi.python.org/pypi/bob.db.mnist
+  license: GNU General Public License v3 (GPLv3)
+  summary: MNIST Database Access API for Bob
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.db.mnist
+  version: 2.0.3
+requirements:
+  build:
+  - python
+  - setuptools
+  - setuptools
+  - bob.db.base
+  run:
+  - python
+  - setuptools
+  - setuptools
+  - bob.db.base
+source:
+  fn: bob.db.mnist-2.0.3.zip
+  md5: 1bb415ad85d50e1ddd946ef2ba01507b
+  url: https://pypi.python.org/packages/source/b/bob.db.mnist/bob.db.mnist-2.0.3.zip
+test:
+  commands:
+  - nosetests -sv bob.db.mnist
+  imports:
+  - bob
+  - bob.db
+  - bob.db.mnist
+  requires:
+  - nose

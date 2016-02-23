@@ -1,0 +1,79 @@
+package:
+  name: bob.io.audio
+  version: "2.0.0"
+
+source:
+  fn: bob.io.audio-2.0.0.zip
+  url: https://pypi.python.org/packages/source/b/bob.io.audio/bob.io.audio-2.0.0.zip
+  md5: 831c4f8711949ce5f4180072d01494d4
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # noarch_python: True
+  preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - bob.io.audio = bob.io.audio:main
+    #
+    # Would create an entry point called bob.io.audio that calls bob.io.audio.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - scipy
+    - bob.extension >2.0.4
+    - bob.blitz
+    - bob.core
+    - bob.io.base
+    - bob.io.matlab
+    - sox
+
+  run:
+    - python
+    - setuptools
+    - scipy
+    - bob.extension >2.0.4
+    - bob.blitz
+    - bob.core
+    - bob.io.base
+    - bob.io.matlab
+    - sox
+
+test:
+  # Python imports
+  imports:
+    - bob
+    - bob.io
+    - bob.io.audio
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+    - nosetests -sv bob.io.audio
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    # Put any additional test requirements here.  For example
+    - nose
+
+about:
+  home: http://github.com/bioidiap/bob.io.audio
+  license: GNU General Public License v3 (GPLv3)
+  summary: 'Audio I/O support for Bob'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

@@ -1,0 +1,40 @@
+about:
+  home: http://github.com/bioidiap/bob.learn.libsvm
+  license: BSD License
+  summary: Bob's Python bindings to LIBSVM
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.learn.libsvm
+  version: 2.0.3
+requirements:
+  build:
+  - python
+  - setuptools
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - libsvm
+  - cmake
+  run:
+  - python
+  - setuptools
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - libsvm
+source:
+  fn: bob.learn.libsvm-2.0.3.zip
+  md5: 9f2a32a574f940d0c6c356cb607ae9b1
+  url: https://pypi.python.org/packages/source/b/bob.learn.libsvm/bob.learn.libsvm-2.0.3.zip
+test:
+  commands:
+  - nosetests -sv bob.learn.libsvm
+  imports:
+  - bob
+  - bob.learn
+  - bob.learn.libsvm
+  requires:
+  - nose

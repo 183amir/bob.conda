@@ -1,0 +1,45 @@
+about:
+  home: https://github.com/bioidiap/bob.learn.boosting
+  license: GNU General Public License v3 (GPLv3)
+  summary: Boosting framework for Bob
+build:
+  entry_points:
+  - boosting_example.py = bob.learn.boosting.examples.mnist:main
+  preserve_egg_dir: true
+package:
+  name: bob.learn.boosting
+  version: 2.0.5
+requirements:
+  build:
+  - python
+  - setuptools
+  - scipy
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - cmake
+  run:
+  - python
+  - setuptools
+  - scipy
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+source:
+  fn: bob.learn.boosting-2.0.5.zip
+  md5: e6b8b31b0e7ab51b872996e5d818f778
+  url: https://pypi.python.org/packages/source/b/bob.learn.boosting/bob.learn.boosting-2.0.5.zip
+test:
+  commands:
+  - boosting_example.py --help
+  - nosetests -sv bob.learn.boosting
+  imports:
+  - bob
+  - bob.learn
+  - bob.learn.boosting
+  - bob.learn.boosting.examples
+  - bob.learn.boosting.tests
+  requires:
+  - nose

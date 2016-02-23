@@ -1,0 +1,35 @@
+about:
+  home: http://github.com/bioidiap/bob.db.atnt
+  license: GNU General Public License v3 (GPLv3)
+  summary: ATNT/ORL Database Access API for Bob
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.db.atnt
+  version: 2.0.3
+requirements:
+  build:
+  - python
+  - setuptools
+  - setuptools
+  - bob.db.base
+  - bob.db.verification.utils
+  run:
+  - python
+  - setuptools
+  - setuptools
+  - bob.db.base
+  - bob.db.verification.utils
+source:
+  fn: bob.db.atnt-2.0.3.zip
+  md5: abe4ff73428fb3c94e6966910c5a5d08
+  url: https://pypi.python.org/packages/source/b/bob.db.atnt/bob.db.atnt-2.0.3.zip
+test:
+  commands:
+  - nosetests -sv bob.db.atnt
+  imports:
+  - bob
+  - bob.db
+  - bob.db.atnt
+  requires:
+  - nose

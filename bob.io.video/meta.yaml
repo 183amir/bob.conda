@@ -1,0 +1,45 @@
+about:
+  home: http://github.com/bioidiap/bob.io.video
+  license: BSD License
+  summary: Video I/O support for Bob
+build:
+  entry_points:
+  - bob_video_test.py = bob.io.video.script.video_test:main
+  preserve_egg_dir: true
+package:
+  name: bob.io.video
+  version: 2.0.6
+requirements:
+  build:
+  - python
+  - setuptools
+  - pillow
+  - bob.extension >2.0.4
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - ffmpeg
+  run:
+  - python
+  - setuptools
+  - pillow
+  - bob.extension >2.0.4
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - ffmpeg
+source:
+  fn: bob.io.video-2.0.6.zip
+  md5: 565a63ff92df7af7a2dddce65d1b5f9a
+  url: https://pypi.python.org/packages/source/b/bob.io.video/bob.io.video-2.0.6.zip
+test:
+  commands:
+  - bob_video_test.py --help
+  - nosetests -sv bob.io.video
+  imports:
+  - bob
+  - bob.io
+  - bob.io.video
+  - bob.io.video.script
+  requires:
+  - nose

@@ -1,0 +1,42 @@
+about:
+  home: http://github.com/bioidiap/bob.learn.linear
+  license: BSD License
+  summary: Bob's Linear Machine and its Trainers
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.learn.linear
+  version: 2.0.7
+requirements:
+  build:
+  - python
+  - setuptools
+  - bob.extension >2.0.4
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - bob.math
+  - bob.learn.activation
+  - cmake
+  run:
+  - python
+  - setuptools
+  - bob.extension >2.0.4
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - bob.math
+  - bob.learn.activation
+source:
+  fn: bob.learn.linear-2.0.7.zip
+  md5: 55de30da99375b9a147ab4927331052f
+  url: https://pypi.python.org/packages/source/b/bob.learn.linear/bob.learn.linear-2.0.7.zip
+test:
+  commands:
+  - nosetests -sv bob.learn.linear
+  imports:
+  - bob
+  - bob.learn
+  - bob.learn.linear
+  requires:
+  - nose

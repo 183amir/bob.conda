@@ -1,0 +1,37 @@
+about:
+  home: http://github.com/bioidiap/bob.db.base
+  license: BSD License
+  summary: Bob's Basic Database API
+build:
+  entry_points:
+  - bob_dbmanage.py = bob.db.base.script.dbmanage:main
+package:
+  name: bob.db.base
+  version: 2.0.5
+requirements:
+  build:
+  - python
+  - setuptools
+  - bob.extension
+  - bob.io.base
+  - sqlalchemy
+  run:
+  - python
+  - bob.extension
+  - bob.io.base
+  - sqlalchemy
+source:
+  fn: bob.db.base-2.0.5.zip
+  md5: c29075dff8e7bf78b6ec94a83d003016
+  url: https://pypi.python.org/packages/source/b/bob.db.base/bob.db.base-2.0.5.zip
+test:
+  commands:
+  - bob_dbmanage.py --help
+  - nosetests -sv bob.db.base
+  imports:
+  - bob
+  - bob.db
+  - bob.db.base
+  - bob.db.base.script
+  requires:
+  - nose

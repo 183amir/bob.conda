@@ -1,0 +1,45 @@
+about:
+  home: http://github.com/bioidiap/bob.db.iris
+  license: BSD License
+  summary: Bob access API for Fisher's Iris Flower Dataset
+build:
+  entry_points:
+  - iris_lda.py = bob.db.iris.example.lda:main
+  preserve_egg_dir: true
+package:
+  name: bob.db.iris
+  version: 2.0.4
+requirements:
+  build:
+  - python
+  - setuptools
+  - setuptools
+  - bob.io.base
+  - bob.measure
+  - bob.learn.linear
+  - bob.db.base
+  - matplotlib
+  run:
+  - python
+  - setuptools
+  - setuptools
+  - bob.io.base
+  - bob.measure
+  - bob.learn.linear
+  - bob.db.base
+  - matplotlib
+source:
+  fn: bob.db.iris-2.0.4.zip
+  md5: bf1d728a6f07429829f043ad4b8a42fe
+  url: https://pypi.python.org/packages/source/b/bob.db.iris/bob.db.iris-2.0.4.zip
+test:
+  commands:
+  - iris_lda.py --help
+  - nosetests -sv bob.db.iris
+  imports:
+  - bob
+  - bob.db
+  - bob.db.iris
+  - bob.db.iris.example
+  requires:
+  - nose

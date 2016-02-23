@@ -1,0 +1,29 @@
+package:
+  name: libmatio
+  version: 1.5.5
+
+source:
+  fn: matio-1.5.5.tar.gz
+  url: http://downloads.sourceforge.net/project/matio/matio/1.5.5/matio-1.5.5.tar.gz
+  md5: a9b28b489fc60a4c004f8c620b078dfb
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - autoconf
+    - automake
+#    - libtool
+    - gcc
+    - hdf5
+    - zlib
+
+  run:
+    - hdf5
+    - zlib
+
+about:
+  home: https://sourceforge.net/projects/matio
+  license: BSD-2-Clause
+  summary: matio is an C library for reading and writing MATLAB MAT files.

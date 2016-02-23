@@ -1,0 +1,75 @@
+package:
+  name: bob.io.matlab
+  version: "2.0.4"
+
+source:
+  fn: bob.io.matlab-2.0.4.zip
+  url: https://pypi.python.org/packages/source/b/bob.io.matlab/bob.io.matlab-2.0.4.zip
+  md5: 089155b2d864a6dca0f30491da0ed4fc
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # noarch_python: True
+  preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - bob.io.matlab = bob.io.matlab:main
+    #
+    # Would create an entry point called bob.io.matlab that calls bob.io.matlab.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - bob.extension
+    - bob.blitz
+    - bob.core
+    - bob.io.base
+    - libmatio
+
+  run:
+    - python
+    - setuptools
+    - bob.extension
+    - bob.blitz
+    - bob.core
+    - bob.io.base
+    - libmatio
+
+test:
+  # Python imports
+  imports:
+    - bob
+    - bob.io
+    - bob.io.matlab
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+    - nosetests -sv bob.io.matlab
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    # Put any additional test requirements here.  For example
+    - nose
+
+about:
+  home: http://github.com/bioidiap/bob.io.matlab
+  license: BSD License
+  summary: 'Enable bob.io.base to handle Matlab(R) files'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

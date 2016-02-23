@@ -1,0 +1,38 @@
+about:
+  home: http://github.com/bioidiap/bob.ip.color
+  license: BSD License
+  summary: Color Conversion Utilities of Bob
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.ip.color
+  version: 2.0.4
+requirements:
+  build:
+  - python
+  - setuptools
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - cmake
+  run:
+  - python
+  - setuptools
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+source:
+  fn: bob.ip.color-2.0.4.zip
+  md5: e9a368eedb58ac61caef46016d4300f3
+  url: https://pypi.python.org/packages/source/b/bob.ip.color/bob.ip.color-2.0.4.zip
+test:
+  commands:
+  - nosetests -sv bob.ip.color
+  imports:
+  - bob
+  - bob.ip
+  - bob.ip.color
+  requires:
+  - nose

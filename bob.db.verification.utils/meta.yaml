@@ -1,0 +1,40 @@
+about:
+  home: http://pypi.python.org/pypi/bob.db.verification.utils
+  license: GNU General Public License v3 (GPLv3)
+  summary: Utilities for bob.db verification databases
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.db.verification.utils
+  version: 2.0.3
+requirements:
+  build:
+  - python
+  - setuptools
+  - six
+  - sqlalchemy
+  - bob.core
+  - bob.io.base
+  - bob.db.base
+  run:
+  - python
+  - setuptools
+  - six
+  - sqlalchemy
+  - bob.core
+  - bob.io.base
+  - bob.db.base
+source:
+  fn: bob.db.verification.utils-2.0.3.zip
+  md5: 85aa246d541b0a5b750f07f608a52ab1
+  url: https://pypi.python.org/packages/source/b/bob.db.verification.utils/bob.db.verification.utils-2.0.3.zip
+test:
+  commands:
+  - nosetests -sv bob.db.verification.utils
+  imports:
+  - bob
+  - bob.db
+  - bob.db.verification
+  - bob.db.verification.utils
+  requires:
+  - nose

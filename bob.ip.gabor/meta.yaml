@@ -1,0 +1,42 @@
+about:
+  home: http://github.com/bioidiap/bob.ip.gabor
+  license: BSD License
+  summary: C++ code and Python bindings for Bob's Gabor wavelet analysis tools
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.ip.gabor
+  version: 2.0.4
+requirements:
+  build:
+  - python
+  - setuptools
+  - matplotlib
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - bob.sp
+  - cmake
+  run:
+  - python
+  - setuptools
+  - matplotlib
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - bob.sp
+source:
+  fn: bob.ip.gabor-2.0.4.zip
+  md5: 358ad42ed8e48f5fc7f8f8cff9a1fdc1
+  url: https://pypi.python.org/packages/source/b/bob.ip.gabor/bob.ip.gabor-2.0.4.zip
+test:
+  commands:
+  - nosetests -sv bob.ip.gabor
+  imports:
+  - bob
+  - bob.ip
+  - bob.ip.gabor
+  requires:
+  - nose

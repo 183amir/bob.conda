@@ -1,0 +1,84 @@
+package:
+  name: bob.measure
+  version: "2.1.0"
+
+source:
+  fn: bob.measure-2.1.0.zip
+  url: https://pypi.python.org/packages/source/b/bob.measure/bob.measure-2.1.0.zip
+  md5: d65e40fb5442c740a7f6b926a75b5944
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - bob.measure = bob.measure:main
+    #
+    # Would create an entry point called bob.measure that calls bob.measure.main()
+
+    - bob_compute_perf.py = bob.measure.script.compute_perf:main
+    - bob_eval_threshold.py = bob.measure.script.eval_threshold:main
+    - bob_apply_threshold.py = bob.measure.script.apply_threshold:main
+    - bob_plot_cmc.py = bob.measure.script.plot_cmc:main
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - bob.extension
+    - bob.blitz
+    - bob.core >2.0.4
+    - bob.math
+    - bob.io.base
+    - matplotlib
+
+  run:
+    - python
+    - bob.extension
+    - bob.blitz
+    - bob.core >2.0.4
+    - bob.math
+    - bob.io.base
+    - matplotlib
+
+test:
+  # Python imports
+  imports:
+    - bob
+    - bob.measure
+    - bob.measure.script
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+    - bob_compute_perf.py --help
+    - bob_eval_threshold.py --help
+    - bob_apply_threshold.py --help
+    - bob_plot_cmc.py --help
+    - nosetests -sv bob.measure
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    # Put any additional test requirements here.  For example
+    - nose
+
+about:
+  home: http://github.com/bioidiap/bob.measure
+  license: BSD License
+  summary: "Bob's evalution metrics"
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

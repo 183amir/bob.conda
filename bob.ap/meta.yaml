@@ -1,0 +1,74 @@
+package:
+  name: bob.ap
+  version: "2.0.4"
+
+source:
+  fn: bob.ap-2.0.4.zip
+  url: https://pypi.python.org/packages/source/b/bob.ap/bob.ap-2.0.4.zip
+  md5: 49f89a84c3c2cb20aa0ffa49d39415a7
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - bob.ap = bob.ap:main
+    #
+    # Would create an entry point called bob.ap that calls bob.ap.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - bob.extension
+    - bob.blitz
+    - bob.core
+    - bob.sp
+    - scipy
+    - cmake
+
+  run:
+    - python
+    - bob.extension
+    - bob.blitz
+    - bob.core
+    - bob.sp
+    - scipy
+
+test:
+  # Python imports
+  imports:
+    - bob
+    - bob.ap
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+    - nosetests -sv bob.ap
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    # Put any additional test requirements here.  For example
+    - nose
+
+about:
+  home: http://github.com/bioidiap/bob.ap
+  license: BSD License
+  summary: "Bob's audio processing utilities"
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

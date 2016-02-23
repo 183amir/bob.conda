@@ -1,0 +1,47 @@
+about:
+  home: http://github.com/bioidiap/bob.io.image
+  license: BSD License
+  summary: Image I/O support for Bob
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.io.image
+  version: 2.0.4
+requirements:
+  build:
+  - python
+  - setuptools
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - giflib
+  - libpng
+  - netpbm
+  - jpeg
+  - libtiff
+  run:
+  - python
+  - setuptools
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.io.base
+  - giflib
+  - libpng
+  - netpbm
+  - jpeg
+  - libtiff
+source:
+  fn: bob.io.image-2.0.4.zip
+  md5: 303de1bd922eb7569d69117f8c55e9ff
+  url: https://pypi.python.org/packages/source/b/bob.io.image/bob.io.image-2.0.4.zip
+test:
+  commands:
+  - nosetests -sv bob.io.image
+  imports:
+  - bob
+  - bob.io
+  - bob.io.image
+  requires:
+  - nose

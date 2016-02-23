@@ -1,0 +1,45 @@
+about:
+  home: http://github.com/bioidiap/bob.ip.base
+  license: BSD License
+  summary: Basic Image Processing Utilities for Bob
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.ip.base
+  version: 2.0.8
+requirements:
+  build:
+  - python
+  - setuptools
+  - matplotlib
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.sp
+  - bob.io.base
+  - bob.math
+  - cmake
+  run:
+  - python
+  - setuptools
+  - matplotlib
+  - bob.extension
+  - bob.blitz
+  - bob.core
+  - bob.sp
+  - bob.io.base
+  - bob.math
+source:
+  fn: bob.ip.base-2.0.8.zip
+  md5: 1167635ce01e3b0a536cb325805e8271
+  url: https://pypi.python.org/packages/source/b/bob.ip.base/bob.ip.base-2.0.8.zip
+test:
+  commands:
+  - nosetests -sv bob.ip.base
+  imports:
+  - bob
+  - bob.ip
+  - bob.ip.base
+  - bob.ip.base.test
+  requires:
+  - nose

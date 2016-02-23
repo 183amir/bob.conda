@@ -1,0 +1,33 @@
+about:
+  home: https://pypi.python.org/pypi/bob.db.wine
+  license: GNU General Public License v3 (GPLv3)
+  summary: Wine Database for bob
+build:
+  preserve_egg_dir: true
+package:
+  name: bob.db.wine
+  version: 2.0.3
+requirements:
+  build:
+  - python
+  - setuptools
+  - setuptools
+  - bob.db.base
+  run:
+  - python
+  - setuptools
+  - setuptools
+  - bob.db.base
+source:
+  fn: bob.db.wine-2.0.3.zip
+  md5: 0e2a93681574ec7d1071bbbc36734208
+  url: https://pypi.python.org/packages/source/b/bob.db.wine/bob.db.wine-2.0.3.zip
+test:
+  commands:
+  - nosetests -sv bob.db.wine
+  imports:
+  - bob
+  - bob.db
+  - bob.db.wine
+  requires:
+  - nose
